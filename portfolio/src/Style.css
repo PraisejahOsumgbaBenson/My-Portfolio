@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Khand:wght@300;400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&family=Oswald:wght@200..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 3%;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #e2e1e1; /* Light gray background color */
+}
+
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between left, center, and right sections */
+  align-items: center; /* Vertically center elements */
+  font-family: "Barlow Condensed", system-ui; /* Font for the header */
+  font-weight: 100;
+  position: relative; /* For positioning the horizontal line */
+}
+
+/* Left section containing logo and nav links */
+.header-left {
+  display: flex;
+  align-items: center; /* Align vertically */
+}
+
+/* Logo */
+.logo {
+  width: 50px; /* Fixed width for the logo */
+  margin-right: 20px; /* Space between logo and navigation */
+  font-family: "Barlow Condensed", system-ui;
+  font-weight: 900; /* Bold font for emphasis */
+  font-size: 30px; /* Large logo size */
+  color: #890620; /* Dark red color */
+}
+
+/* Box around Home and About links */
+.nav-box {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  padding: 5px 10px; /* Padding around the box */
+  border: 2px solid #920e0e; /* Red border around the box */
+}
+
+/* Vertical lines between links */
+.v-line {
+  width: 2px;
+  background-color: #920e0e; /* Red vertical line */
+}
+
+.ve-line {
+  width: 2px;
+  height: 30px;
+  background-color: #920e0e; /* Shorter vertical line */
+}
+
+/* Styling for navigation links */
+.nav-link {
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Dark gray text color */
+  font-weight: bold;
+  padding: 0 10px; /* Space around the links */
+  position: relative; /* For positioning the underline effect */
+  transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Hover effects for links */
+.nav-link:hover {
+  color: #fff; /* White text on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Underline effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Positioning the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #920e0e; /* Red underline */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.3s; /* Smooth transition for the underline */
+}
+
+/* Hover effect to reveal the underline */
+.nav-link:hover::after {
+  transform: scaleX(1); /* Show underline on hover */
+}
+
+/* Center section of the header */
+.header-center {
+  display: flex;
+  justify-content: center; /* Center-align links */
+  flex-grow: 1; /* Ensure the center section takes available space */
+}
+
+/* Navigation list */
+.nav-list {
+  display: flex;
+  gap: 90px; /* Space between each list item */
+  list-style: none; /* Remove bullet points */
+}
+
+/* Right section with Services link */
+.header-right {
+  display: flex;
+  align-items: center; /* Vertically align */
+}
+
+/* Horizontal line styling */
+.h-line {
+  position: absolute;
+  bottom: 0;
+  left: 70px; /* Positioning based on logo width */
+  width: calc(100% - 95px); /* Adjust based on logo width */
+  height: 3px;
+  background-color: #920e0e; /* Red horizontal line */
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack the header sections */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .header-center, .header-right {
+    width: 100%; /* Full width for center and right sections */
+    text-align: center; /* Center-align the links */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Stack links vertically */
+  }
+
+  .nav-link {
+    margin: 10px 0; /* Add space between each link */
+  }
+}
