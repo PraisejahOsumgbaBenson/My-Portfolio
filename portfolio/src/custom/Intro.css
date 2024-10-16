@@ -1,0 +1,34 @@
+/* Intro Screen */
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.intro-text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 25rem; /* Initial large size */
+  color: #630606; /* Text color */
+  text-align: center;
+  animation: expandAndHide 3s ease-in-out forwards; /* Animation name updated */
+}
+
+@keyframes expandAndHide {
+  0% {
+    transform: scale(1); /* Normal size */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: scale(3.5); /* Massive expansion */
+    opacity: 1; /* Keep visible while expanding */
+    visibility: hidden; /* Hide the text after expanding */
+  }
+}
+
+.bow{
+    width: 200px;
+    justify-content: center;
+}
