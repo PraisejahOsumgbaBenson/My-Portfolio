@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import "./Style.css";
 import Home from "./components/Home";
-
+import Cursor from "./components/cursor";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Cursor />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Khand:wght@300;400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&family=Oswald:wght@200..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 3%;  /* Padding of 5% around the body */
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #e2e1e1;
+}
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Barlow Condensed", system-ui;
+  font-weight: 100;
+  position: relative;
+}
+
+/* Left section */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  width: 50px;
+  margin-right: 20px;
+  font-family: "Barlow Condensed", system-ui;
+  font-weight: 900;
+  font-size: 30px;
+  color: #890620;
+}
+
+/* Box for Home and About links */
+.nav-box {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px; /* Add padding for spacing */
+  border: 2px solid #920e0e; /* Border for the box */
+}
+
+/* Vertical line styling */
+.v-line {
+  width: 2px;
+  background-color: #920e0e; /* Color of the vertical line */
+}
+
+.ve-line {
+  width: 2px;
+  height: 30px;
+  background-color: #920e0e;
+}
+
+/* Styling for nav links */
+.nav-link {
+  text-decoration: none;
+  color: #333; /* Default text color */
+  font-weight: bold;
+  padding: 0 10px; /* Space around links */
+  position: relative; /* For pseudo-element positioning */
+  transition: color 0.3s, background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Hover effects for nav links */
+.nav-link:hover {
+  color: #fff; /* Change text color on hover */ /* Change background color on hover */
+  border-radius: 4px; /* Slight rounding of corners for the background */
+}
+
+/* Underline effect using pseudo-element */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Position the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #920e0e; /* Color of the underline */
+  transform: scaleX(0); /* Start hidden */
+  transition: transform 0.3s; /* Smooth transition for the underline */
+}
+
+/* Scale effect on hover */
+.nav-link:hover::after {
+  transform: scaleX(1); /* Show underline */
+}
+
+/* Center section */
+.header-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-list {
+  display: flex;
+  gap: 90px;
+  list-style: none;
+}
+
+/* Right section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Horizontal line styling */
+.h-line {
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  width: calc(100% - 95px); /* Adjust width based on logo */
+  height: 3px;
+  background-color: #920e0e; /* Horizontal line color */
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-center, .header-right {
+    width: 100%; /* Full width for center and right */
+    text-align: center; /* Center-align the links */
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+}
+
