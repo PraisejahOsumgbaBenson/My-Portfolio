@@ -11,10 +11,16 @@ html {
 }
 
 body {
-  padding: 3%;
+  padding:4.5%;
   margin: 0;
   box-sizing: border-box;
-  background-color: #e2e1e1; /* Light gray background color */
+ /*  background-image: url(./assets/er.png);  *//* Corrected image URL */
+  background-size: cover; /* Ensures the background image covers the entire body */
+/* Centers the background image */
+  background-position: center;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-color: #e2e1e1; /* Uncomment if you want a fallback color */
+ 
 }
 
 /* Header container */
@@ -36,26 +42,23 @@ body {
 /* Logo */
 .logo {
   width: 50px; /* Fixed width for the logo */
-  margin-right: 20px; /* Space between logo and navigation */
+  margin-right: 10px; /* Space between logo and navigation */
   font-family: "Barlow Condensed", system-ui;
   font-weight: 900; /* Bold font for emphasis */
-  font-size: 30px; /* Large logo size */
-  color: #890620; /* Dark red color */
+  font-size: 40px; /* Large logo size */
+  color: #2F4858; /* Dark red color */
 }
 
 /* Box around Home and About links */
-.nav-box {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  padding: 5px 10px; /* Padding around the box */
-  border: 2px solid #920e0e; /* Red border around the box */
-}
+/* .nav-box { */
+ /*  display: flex; */
+ /*  align-items: center; */ /* Align items vertically */
+  /* padding: 5px 10px; */ /* Padding around the box */
+ /*  border: 2px solid #920e0e;  *//* Red border around the box */
+/* } */
 
 /* Vertical lines between links */
-.v-line {
-  width: 2px;
-  background-color: #920e0e; /* Red vertical line */
-}
+
 
 .ve-line {
   width: 2px;
@@ -87,7 +90,26 @@ body {
   right: 0;
   bottom: -5px; /* Positioning the underline */
   height: 2px; /* Thickness of the underline */
-  background-color: #920e0e; /* Red underline */
+  background-color: #F6AE2D; /* Red underline */
+  transform: scaleX(0); /* Initially hidden */
+  transition: transform 0.3s; /* Smooth transition for the underline */
+}
+
+.service-link{
+  color: wheat;
+}
+.service-link:hover {
+  color: #fff; /* White text on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+.service-link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Positioning the underline */
+  height: 2px; /* Thickness of the underline */
+  background-color: #ff0000; /* Red underline */
   transform: scaleX(0); /* Initially hidden */
   transition: transform 0.3s; /* Smooth transition for the underline */
 }
@@ -100,14 +122,14 @@ body {
 /* Center section of the header */
 .header-center {
   display: flex;
-  justify-content: center; /* Center-align links */
+  justify-content: right; /* Center-align links */
   flex-grow: 1; /* Ensure the center section takes available space */
 }
 
 /* Navigation list */
 .nav-list {
   display: flex;
-  gap: 90px; /* Space between each list item */
+  gap: 10px; /* Space between each list item */
   list-style: none; /* Remove bullet points */
 }
 
@@ -118,14 +140,6 @@ body {
 }
 
 /* Horizontal line styling */
-.h-line {
-  position: absolute;
-  bottom: 0;
-  left: 70px; /* Positioning based on logo width */
-  width: calc(100% - 95px); /* Adjust based on logo width */
-  height: 3px;
-  background-color: #920e0e; /* Red horizontal line */
-}
 
 /* Responsive design for small screens */
 @media (max-width: 768px) {
@@ -146,4 +160,433 @@ body {
   .nav-link {
     margin: 10px 0; /* Add space between each link */
   }
+}
+
+
+
+
+
+
+.text-container {
+  /* Use flexbox for vertical alignment */
+  flex-direction: column; /* Stack items vertically */
+   /* Align items to the left */
+  position: absolute; /* Position it absolutely */
+  right: 1px; /* Distance from the left side */
+  bottom: 10px; /* Distance from the bottom */
+  color: #333; /* Text color */
+  padding: 3%;
+ /* Align text to the left */
+   /* Adjust as needed for page layout */
+  font-family: Arial, sans-serif;
+top: 550px;
+ 
+}
+
+.number {
+  font-size: 1.5rem; /* Size for the number */
+  font-weight: bold; /* Bold style for the number */
+  margin: 0; /* Remove default margin */
+  color: #F6AE2D;
+}
+
+.name {
+  font-size: 2rem; /* Size for the name */
+  margin: 0; /* Remove default margin */
+  margin-top: 30px;
+  font-family: "Oswald", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.title {
+  font-size: 1.3rem; /* Size for the title */
+  margin: 0; /* Remove default margin */
+  font-family: "Khand", system-ui;
+  font-weight: 400;
+  font-style: normal;
+ /* Align text to the left */
+
+}
+.title {
+  font-family: 'Khand', sans-serif;
+  font-size: 1.5rem;
+  margin: 10px 0 0;
+  padding-left: 20px;
+  
+  border-left: 3px solid #86BBD8; /* Vertical border */
+}
+
+.nav-link {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333; /* Text color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.nav-link:hover {
+  color: #555; /* Hover effect */
+}
+
+/* Adjusting LET'S TALK button */
+.lets-talk {
+  font-size: 1.2rem; /* Increased font size */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  position: relative;
+  color: #333;
+  font-family: "Barlow Condensed", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  border: 2px solid #ca0f0f;
+  padding: 5%;
+  top: 330px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  left: 30px;
+}
+
+.lets-talk:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px rgba(193, 132, 132, 0.15);
+}
+.lets-talk {
+  background-color: transparent;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.lets-talk:hover {
+  background-color: rgba(151, 8, 8, 0.8); /* Teal with transparency */
+  color: white;
+}
+
+/* Socials container changes */
+.socials-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 20px;
+
+  color: #141414;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+  border-color: #0f0f0f;
+  transform: translateY(-2px);
+}
+
+.socials a {
+  color: #33658A;
+  transition: color 0.3s ease;
+}
+
+.socials a svg {
+  width: 30px; /* Adjusted size */
+  height: 20px;
+}
+
+.socials a:hover {
+  color: #0f0f0f;
+}
+
+
+
+.vertical-line {
+  width: 2px; /* Width of the vertical line */
+  height: 60%; /* Adjust height relative to the container */
+  background-color: #414141; /* Color of the vertical line */
+  position: absolute;
+  right: 50px; /* Adjust based on your layout */
+  top: 95px; /* Position from the top */
+}
+
+.circle-on-line {
+  width: 40px; /* Size of the circle */
+  height: 40px;
+  border-radius: 50%; /* Make it a circle */
+  border: #890620 solid 2px; /* Circle color */
+  position: absolute;
+  right:31px; /* Adjust to center the circle on the line */
+  top: 80px; /* Position the circle slightly above the line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Ensure the circle is above the line */
+}
+
+
+/* Keyframes for a fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the gif-container */
+.gif-container {
+  display: flex;
+ 
+  align-items: center;
+  height: 55rem;
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+}
+
+.text-container {
+  animation: fadeIn 1s ease-out forwards; /* Delayed fade-in */
+  opacity: 0;
+}
+.header{
+  animation: fadeIn 1s ease-out forwards; /* Delayed fade-in */
+  opacity: 0;
+}
+.socials-container {
+  animation: fadeIn 1s ease-out forwards; /* Further delayed fade-in */
+  opacity: 0;
+}
+
+.name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #2F4858;
+}
+
+
+
+
+
+
+.large-text-background {
+  position: absolute;
+  top: 45%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by 50% for perfect centering */
+  z-index: 1; /* Ensure the text is behind other elements */
+}
+
+.large-text {
+  font-size: 90rem; /* Large font size */
+  color: rgba(0, 0, 0, 0.1); /* Light color with transparency */
+  font-family: 'Oswald', sans-serif; /* Use Oswald for consistency */
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 10px;
+  white-space: nowrap; /* Prevents text from breaking */
+  z-index: -1; /* Ensure it's behind other elements */
+}
+
+
+
+/* Keyframes for the sliding effect */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateX(60%); /* End at original position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Apply the animation to the large text */
+.large-text {
+  animation: slideIn 1s ease-out forwards; /* Apply the sliding effect */
+  font-size: 10rem; /* Large font size */
+  color: rgba(12, 0, 0, 0.1); /* Light color with transparency */
+  font-family: 'Oswald', sans-serif; /* Use Oswald for consistency */
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 10px;
+  white-space: nowrap; /* Prevents text from breaking */
+  z-index: -9; /* Ensure it's behind other elements */
+}
+
+
+/* .page{ */
+  /* width: 30%; */
+  /* height: 80%; */
+  /* background-color: #630606; */
+  /* margin-left: 200px; */
+  /* border-radius: 20px; */
+/* } */
+
+.Bow_border{
+ 
+  border-radius: 20px;
+  margin-left: 200px;
+}
+
+/* Page background styling */
+.page {
+  position: relative;/* You can change this to your desired background */
+  padding: 20px;
+  width: 10%; /* Adjust width according to your design */
+  height: 400px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; 
+  left: 300px;/* Add space between page and other elements */
+  width: 30%;
+  height: 80%;
+  background-color: #630606;
+  margin-left: 150px;
+  border-radius: 20px;
+}
+
+.container {
+  /* Align text to the left */
+ /* Adjust as needed for page layout */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-top: 40px;
+  justify-content: right;
+}
+
+.hi-text {/* Make the 'Hi' bigger */
+  font-weight: bold;
+  display: block;
+  font-size: 10rem;
+  margin-bottom: -40px;
+  color: #33658A;
+}
+
+.name-text {
+  font-weight: bold;
+  color: #2F4858;
+  display: block;
+  margin-top: 10px;
+ 
+font-size: 8rem;
+}
+
+.description-text {
+  color: #525151;
+  margin-top: -7px;
+  display: block;
+  max-width: 400px; /* Limit the width of the description */
+ margin-left: 10px;
+font-size: 1.2rem;
+margin-bottom: 100px;
+    font-family: "Barlow Condensed", system-ui;
+}
+
+
+   /* Red Ball Styling */
+/* .red-ball { */
+  /* width: 30px; */
+  /* height: 30px; */
+  /* background-color: rgb(199, 32, 32); */
+  /* border-radius: 50%; */
+  /* position: absolute; */
+  /* top: -10px; */
+  /* left: -1px; */
+ /*  z-index: -1; */ /* Put it behind the text */
+ /*  opacity: 0.8; */ /* Slight transparency */
+/* } */
+
+/* Vertical line before the logo */
+/* Container for header and overall styling */
+
+/* Vertical line beside logo */
+
+.copyright {
+  font-size: 21px;
+  color: #363434; /* Subtle gray color */
+  
+  font-family: "Barlow Condensed", system-ui;
+  font-weight: 300;
+ 
+  
+}
+
+.copyright_name{
+  color: #23395B;
+  font-weight: 600;
+}
+.shape-container {
+  clear: both; /* Ensures the image doesn't float awkwardly */
+  position: relative;
+  width: 70%; /* Adjust the size of the container */
+  float: right; /* Float it to the right */
+    top: -70px;
+    margin-left: 20px;
+}
+
+.shape-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+}
+
+
+
+
+.scroll-down-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20rem;
+  position: relative;
+}
+
+.circle-text {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* Makes the container circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0px 80px; /* Distance from center */
+  font-size: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #333;
+}
+
+.scroll-arrow {
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  margin-top: 160px;
 }

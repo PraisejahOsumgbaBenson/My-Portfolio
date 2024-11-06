@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importing Router and Routes for navigation
 import "./Style.css"; // Importing global styles
 import Home from "./components/Home"; // Importing the Home component for the '/' route
-import Cursor from "./components/Cursor"; // Importing the custom Cursor component
+import Cursor from "./custom/cursor"; // Importing the custom Cursor component
 
 function App() {
   return (
