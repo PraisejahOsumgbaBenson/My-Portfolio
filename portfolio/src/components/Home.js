@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Intro from "../custom/Intro"; // Import the Intro component
 import Header from "./Header"; // Import the Header component
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsChevronDoubleDown } from "react-icons/bs";
+// import { BsChevronDoubleDown } from "react-icons/bs";
+import { gsap } from "gsap/gsap-core";
 import image from "../assets/imgg.png";
+
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    if (!showIntro) {
+      gsap.from(".hi-text", { duration: 1, opacity: 0, y: -50 });
+      gsap.from(".name-text", { duration: 1, opacity: 0, y: -30, delay: 0.5 });
+      gsap.from(".description-text", {
+        duration: 1,
+        opacity: 0,
+        y: -20,
+        delay: 1,
+      });
+    }
+  }, [showIntro]);
+
+  useEffect(() => {
+    gsap.to(".circle-text", {
+      rotation: 360,
+      repeat: -1,
+      duration: 10,
+      ease: "linear",
+    });
+  }, []);
 
   const handleIntroEnd = () => {
     setShowIntro(false);
@@ -27,13 +51,12 @@ function Home() {
                 <span className="name-text">I’M PJ!</span>
                 <br />
                 <span className="description-text">
-                  A frontend developer focused on clean, scalable code using
-                  React and JavaScript. I love painting and exploring tech.
-                  Let’s connect!
+                  Building impactful software and exploring efficient solutions
+                  excite me. Open-source contributor and problem-solver—I'm a
+                  great addition to any team!
                 </span>
               </span>
-              {/* Add Copyright Text */}
-              {/* <div className="copyright">
+             {/*  <div className="copyright">
                 &copy; {new Date().getFullYear()}{" "}
                 <span className="copyright_name">
                   Praisejah Osumgba-Benson.
@@ -41,7 +64,8 @@ function Home() {
                 All rights reserved.
               </div> */}
             </div>
-            <div class="shape-container">
+
+            <div className="shape-container">
               <img src={image} alt="description" />
             </div>
 
@@ -82,20 +106,16 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="scroll-down-container">
-            <div className="circle-text">
-              {Array.from("SCROLL DOWN TO SEE").map((char, index) => (
-                <span
-                  key={index}
-                  className="circle-letter"
-                  style={{ transform: `rotate(${index * 20}deg)` }}
-                >
-                  {char}
-                </span>
-              ))}
-              <BsChevronDoubleDown className="scroll-arrow" />
-            </div>
+
+            {/* News Ticker */}
+            {/*  <div className="news-ticker-container">
+              <div className="news-ticker">
+                <p>
+                  Breaking News: PJ is a Software Engineer and Open-Source
+                  Contributor. Stay tuned for more updates!
+                </p>
+              </div>
+            </div> */}
           </div>
         </>
       )}
