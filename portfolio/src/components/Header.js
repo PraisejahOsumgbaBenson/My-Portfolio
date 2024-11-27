@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { gsap } from "gsap";
 // Sound file for hover effect
 import hoverSound from "../assets/key.mp3";
 
@@ -31,12 +31,41 @@ function Header() {
     audio.play();
   };
 
+  // Function to handle logo hover effect (scale up)
+  const handleLogoHover = () => {
+    gsap.to(".logo", {
+      scale: 1.2,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  };
+
+  // Function to reset logo scale when mouse leaves
+  const handleLogoMouseLeave = () => {
+    gsap.to(".logo", {
+      scale: 1,
+      duration: 0.4,
+      ease: "power2.inOut", // Use a smooth easing for returning to original scale
+    });
+  };
+
   return (
     <header className="header">
       <div className="left-nav">
         <div className="header-left">
           {/* Logo section */}
-          <p className="logo">PJ.</p>
+          <p
+            className="logo"
+            onMouseEnter={() => {
+              handleLogoHover();
+              playHoverSound(); // Play hover sound
+            }}
+            onMouseLeave={handleLogoMouseLeave} // Reset scale on mouse leave
+            style={{ cursor: "pointer" }}
+          >
+            <span>P</span>
+            <span>J</span>
+          </p>
         </div>
         <div className="time">
           <p>NIGERIA, {time} WAT</p>
@@ -78,8 +107,7 @@ function Header() {
           <button
             className="darkmode"
             onMouseEnter={playHoverSound} // Add hover sound effect
-          >
-          </button>
+          ></button>
         </div>
       </nav>
     </header>
