@@ -2,7 +2,6 @@ import React, { useState} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./Style.css";
 import Home from "./components/Home";
-import About from "./components/About";
 import Cursor from "./custom/cursor";
 import Intro from "./custom/Intro";
 
@@ -24,7 +23,6 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
           </Routes>
         )}
       </div>
