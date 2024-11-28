@@ -1,5 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Khand:wght@300;400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&family=Oswald:wght@200..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Khand:wght@300;400;500;600;700&family=Nanum+Gothic+Coding:wght@400;700&family=Oswald:wght@200..700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=supreme@100,300,500&f[]=tanker@400&f[]=pally@400&f[]=kola@400&f[]=asap@400&f[]=nippo@200,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=striper@400&f[]=chillax@400&f[]=stardom@400&f[]=space-grotesk@300,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gaegu&family=Gotu&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400..800&display=swap");
+/* bebas neue */
+@font-face {
+  font-display: block;
+  font-family: safiro-regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/safiro-regular.15f206cea3b4f37faa01.woff2) format("woff2"),
+    url(./assets/safiro-regular.15f206cea3b4f37faa01.woff2) format("woff");
+}
+@font-face {
+  font-display: block;
+  font-family: safiro;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./safiro-regular-i.0a35a23135da8447ecfd.woff2) format("woff2"),
+    url(./safiro-regular-i.0a35a23135da8447ecfd.woff2) format("woff");
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,26 +31,55 @@ html {
 }
 
 body {
-  padding:4.5%;
   margin: 0;
   box-sizing: border-box;
- /*  background-image: url(./assets/er.png);  *//* Corrected image URL */
   background-size: cover; /* Ensures the background image covers the entire body */
-/* Centers the background image */
   background-position: center;
   background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-color: #e2e1e1; /* Uncomment if you want a fallback color */
- 
+  background-color: #566246; /* Uncomment if you want a fallback color */
 }
+/* Grain effect utility */
+.grainy-effect {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.grainy-effect:before {
+  content: "";
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 782px;
+  opacity: 0.12;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.grainy-effect .grainy-layer {
+  position: relative;
+  z-index: 2; /* Ensure content is above grain */
+  mix-blend-mode: overlay; /* Optional: Blend grainy texture */
+}
+
+
+
 
 /* Header container */
 .header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1.6rem;
   display: flex;
-  justify-content: space-between; /* Space between left, center, and right sections */
-  align-items: center; /* Vertically center elements */
-  font-family: "Barlow Condensed", system-ui; /* Font for the header */
-  font-weight: 100;
-  position: relative; /* For positioning the horizontal line */
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 /* Left section containing logo and nav links */
@@ -45,71 +94,47 @@ body {
   margin-right: 10px; /* Space between logo and navigation */
   font-family: "Barlow Condensed", system-ui;
   font-weight: 900; /* Bold font for emphasis */
-  font-size: 40px; /* Large logo size */
-  color: #2F4858; /* Dark red color */
+  font-size: 30px; /* Large logo size */
+  color: #A4C2A5; /* Dark red color */
+ transition: transform 0.3s ease, color 0.3s ease;
 }
-
-/* Box around Home and About links */
-/* .nav-box { */
- /*  display: flex; */
- /*  align-items: center; */ /* Align items vertically */
-  /* padding: 5px 10px; */ /* Padding around the box */
- /*  border: 2px solid #920e0e;  *//* Red border around the box */
-/* } */
-
-/* Vertical lines between links */
-
-
-.ve-line {
-  width: 2px;
-  height: 30px;
-  background-color: #920e0e; /* Shorter vertical line */
+.logo:hover{
+  color: #d7e2d7;
 }
-
+.left-nav{
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+.time {
+  font-family: safiro-regular;
+  color: #F1F2EB;
+  font-size: 13px;
+      text-transform: uppercase;
+}
 /* Styling for navigation links */
 .nav-link {
   text-decoration: none; /* Remove underline from links */
-  color: #333; /* Dark gray text color */
-  font-weight: bold;
-  padding: 0 10px; /* Space around the links */
   position: relative; /* For positioning the underline effect */
   transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+
 }
 
 /* Hover effects for links */
 .nav-link:hover {
-  color: #fff; /* White text on hover */
+  color: #F1F2EB; /* White text on hover */
   border-radius: 4px; /* Rounded corners */
 }
 
 /* Underline effect */
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0;
+  left: 2px;
   right: 0;
   bottom: -5px; /* Positioning the underline */
-  height: 2px; /* Thickness of the underline */
-  background-color: #F6AE2D; /* Red underline */
-  transform: scaleX(0); /* Initially hidden */
-  transition: transform 0.3s; /* Smooth transition for the underline */
-}
-
-.service-link{
-  color: wheat;
-}
-.service-link:hover {
-  color: #fff; /* White text on hover */
-  border-radius: 4px; /* Rounded corners */
-}
-.service-link::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px; /* Positioning the underline */
-  height: 2px; /* Thickness of the underline */
-  background-color: #ff0000; /* Red underline */
+  height: 1.2px; /* Thickness of the underline */
+  background-color: #A4C2A5; /* Red underline */
   transform: scaleX(0); /* Initially hidden */
   transition: transform 0.3s; /* Smooth transition for the underline */
 }
@@ -124,19 +149,31 @@ body {
   display: flex;
   justify-content: right; /* Center-align links */
   flex-grow: 1; /* Ensure the center section takes available space */
+  gap: 80px;
+  align-items: center;
 }
 
 /* Navigation list */
 .nav-list {
   display: flex;
-  gap: 10px; /* Space between each list item */
+ font-family: safiro-regular;
+ color: #F1F2EB;
   list-style: none; /* Remove bullet points */
+  gap: -10px;
+
 }
 
 /* Right section with Services link */
 .header-right {
   display: flex;
   align-items: center; /* Vertically align */
+}
+.darkmode{
+  background-color: #000b11;
+      border-radius: 9999px;
+          height: 1rem;
+          width: 1rem;
+          border: none;
 }
 
 /* Horizontal line styling */
@@ -148,7 +185,8 @@ body {
     align-items: flex-start; /* Align to the left */
   }
 
-  .header-center, .header-right {
+  .header-center,
+  .header-right {
     width: 100%; /* Full width for center and right sections */
     text-align: center; /* Center-align the links */
   }
@@ -162,32 +200,23 @@ body {
   }
 }
 
-
-
-
-
-
 .text-container {
-  /* Use flexbox for vertical alignment */
   flex-direction: column; /* Stack items vertically */
-   /* Align items to the left */
   position: absolute; /* Position it absolutely */
   right: 1px; /* Distance from the left side */
-  bottom: 10px; /* Distance from the bottom */
+  bottom: 50px; /* Distance from the bottom */
   color: #333; /* Text color */
-  padding: 3%;
- /* Align text to the left */
-   /* Adjust as needed for page layout */
-  font-family: Arial, sans-serif;
-top: 550px;
  
+  font-family: Arial, sans-serif;
+  top: 600px;
 }
 
 .number {
   font-size: 1.5rem; /* Size for the number */
   font-weight: bold; /* Bold style for the number */
   margin: 0; /* Remove default margin */
-  color: #F6AE2D;
+  color: #f6ae2d;
+  font-family: "Gaegu", sans-serif;
 }
 
 .name {
@@ -198,70 +227,33 @@ top: 550px;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  font-family: "Syne", sans-serif;
 }
 
 .title {
   font-size: 1.3rem; /* Size for the title */
-  margin: 0; /* Remove default margin */
+  margin: 10px 0 0; /* Remove default margin */
   font-family: "Khand", system-ui;
   font-weight: 400;
-  font-style: normal;
- /* Align text to the left */
-
-}
-.title {
-  font-family: 'Khand', sans-serif;
   font-size: 1.5rem;
-  margin: 10px 0 0;
+  border-left: 3px solid #86bbd8;
   padding-left: 20px;
-  
-  border-left: 3px solid #86BBD8; /* Vertical border */
+  font-family: "Gaegu", sans-serif;
+  font-family: "Syne", sans-serif;
+  font-family: "Gaegu", sans-serif;
+  /* Align text to the left */
 }
 
 .nav-link {
   margin: 0 15px;
   text-decoration: none;
-  font-weight: bold;
-  color: #333; /* Text color */
+color: #F1F2EB;
+font-size: 12px;
   cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .nav-link:hover {
-  color: #555; /* Hover effect */
-}
-
-/* Adjusting LET'S TALK button */
-.lets-talk {
-  font-size: 1.2rem; /* Increased font size */
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  position: relative;
-  color: #333;
-  font-family: "Barlow Condensed", system-ui;
-  font-weight: 700;
-  font-style: normal;
-  border: 2px solid #ca0f0f;
-  padding: 5%;
-  top: 330px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  left: 30px;
-}
-
-.lets-talk:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px rgba(193, 132, 132, 0.15);
-}
-.lets-talk {
-  background-color: transparent;
-  transition: background-color 0.6s ease-in-out;
-}
-
-.lets-talk:hover {
-  background-color: rgba(151, 8, 8, 0.8); /* Teal with transparency */
-  color: white;
+  color: #D8DAD3; /* Hover effect */
 }
 
 /* Socials container changes */
@@ -272,14 +264,14 @@ top: 550px;
   justify-content: flex-end;
   position: absolute;
   right: 20px;
-
   color: #141414;
+
 }
 
 .socials {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: -10px;
 }
 
 .social-icon {
@@ -288,55 +280,33 @@ top: 550px;
   align-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  
   margin-bottom: 20px;
   transition: border-color 0.3s, transform 0.3s;
+  font-size: 10px;
 }
 
 .social-icon:hover {
-  border-color: #0f0f0f;
+  border-color: #5e9ee7;
   transform: translateY(-2px);
 }
 
 .socials a {
-  color: #33658A;
+   color: #A4C2A5;
   transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.1s ease;
 }
 
 .socials a svg {
-  width: 30px; /* Adjusted size */
+  width: 20px; /* Adjusted size */
   height: 20px;
 }
 
 .socials a:hover {
-  color: #0f0f0f;
+  color: #5eae60; /* New color on hover */
+  transform: translateY(-3px); /* Move the element up slightly */
+  transition-delay: 0.1s; /* Add a small delay before the hover effect starts */
 }
-
-
-
-.vertical-line {
-  width: 2px; /* Width of the vertical line */
-  height: 60%; /* Adjust height relative to the container */
-  background-color: #414141; /* Color of the vertical line */
-  position: absolute;
-  right: 50px; /* Adjust based on your layout */
-  top: 95px; /* Position from the top */
-}
-
-.circle-on-line {
-  width: 40px; /* Size of the circle */
-  height: 40px;
-  border-radius: 50%; /* Make it a circle */
-  border: #890620 solid 2px; /* Circle color */
-  position: absolute;
-  right:31px; /* Adjust to center the circle on the line */
-  top: 80px; /* Position the circle slightly above the line */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1; /* Ensure the circle is above the line */
-}
-
 
 /* Keyframes for a fade-in effect */
 @keyframes fadeIn {
@@ -353,18 +323,18 @@ top: 550px;
 /* Apply the animation to the gif-container */
 .gif-container {
   display: flex;
- 
+  padding: 3%;
   align-items: center;
   height: 55rem;
   opacity: 0; /* Start invisible */
   animation: fadeIn 1s ease-out forwards; /* Fade-in animation */
+  justify-content: center;
 }
 
 .text-container {
   animation: fadeIn 1s ease-out forwards; /* Delayed fade-in */
-  opacity: 0;
 }
-.header{
+.header {
   animation: fadeIn 1s ease-out forwards; /* Delayed fade-in */
   opacity: 0;
 }
@@ -374,40 +344,14 @@ top: 550px;
 }
 
 .name {
-  font-family: 'Oswald', sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 0;
-  color: #2F4858;
+  color: #2f4858;
 }
-
-
-
-
-
-
-.large-text-background {
-  position: absolute;
-  top: 45%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Offset by 50% for perfect centering */
-  z-index: 1; /* Ensure the text is behind other elements */
-}
-
-.large-text {
-  font-size: 90rem; /* Large font size */
-  color: rgba(0, 0, 0, 0.1); /* Light color with transparency */
-  font-family: 'Oswald', sans-serif; /* Use Oswald for consistency */
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 10px;
-  white-space: nowrap; /* Prevents text from breaking */
-  z-index: -1; /* Ensure it's behind other elements */
-}
-
-
 
 /* Keyframes for the sliding effect */
 @keyframes slideIn {
@@ -421,172 +365,293 @@ top: 550px;
   }
 }
 
-/* Apply the animation to the large text */
-.large-text {
-  animation: slideIn 1s ease-out forwards; /* Apply the sliding effect */
-  font-size: 10rem; /* Large font size */
-  color: rgba(12, 0, 0, 0.1); /* Light color with transparency */
-  font-family: 'Oswald', sans-serif; /* Use Oswald for consistency */
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 10px;
-  white-space: nowrap; /* Prevents text from breaking */
-  z-index: -9; /* Ensure it's behind other elements */
-}
-
-
-/* .page{ */
-  /* width: 30%; */
-  /* height: 80%; */
-  /* background-color: #630606; */
-  /* margin-left: 200px; */
-  /* border-radius: 20px; */
-/* } */
-
-.Bow_border{
- 
-  border-radius: 20px;
-  margin-left: 200px;
-}
-
-/* Page background styling */
-.page {
-  position: relative;/* You can change this to your desired background */
-  padding: 20px;
-  width: 10%; /* Adjust width according to your design */
-  height: 400px; /* Adjust height as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px; 
-  left: 300px;/* Add space between page and other elements */
-  width: 30%;
-  height: 80%;
-  background-color: #630606;
-  margin-left: 150px;
-  border-radius: 20px;
-}
-
 .container {
-  /* Align text to the left */
- /* Adjust as needed for page layout */
-  font-family: Arial, sans-serif;
   padding: 20px;
-  margin-top: 40px;
-  justify-content: right;
+  margin-top: -5px;
+ align-items: center;
+ justify-content: center;
+}
+.collaboration-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0; /* Add spacing above and below */
+  gap: 10px; /* Space between icon and text */
 }
 
-.hi-text {/* Make the 'Hi' bigger */
-  font-weight: bold;
-  display: block;
+.collaboration-icon {
+  color: #2f4858; /* Icon color */
+}
+
+.collaboration-text {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px; /* Adjust font size */
+  color: #D8DAD3; /* Text color */
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  font-family: safiro-regular;
+}
+
+sup{
+  font-size: 30px;
+  margin-left: 20px;
+ 
+}
+
+.hi-text {
+  /* Make the 'Hi' bigger */
+ 
+  align-items: center;
   font-size: 10rem;
-  margin-bottom: -40px;
-  color: #33658A;
+  margin-top: -100px;
+  
+  color: #F1F2EB;
+  
+  font-family: /* 'Pally', sans-serif */ "Nippo", sans-serif;
+  font-family: "Barlow Condensed", system-ui;
+  font-family: "Gaegu", sans-serif;
+  font-family: "Syne", sans-serif;
+  font-family: "Gotu", sans-serif;
+font-family: safiro;
 }
 
 .name-text {
-  font-weight: bold;
-  color: #2F4858;
-  display: block;
-  margin-top: 10px;
  
-font-size: 8rem;
+  color: #F1F2EB;
+  display: block;
+  margin-top: 20px;
+  font-family: "Kola", sans-serif;
+  font-size: 16px;
+  gap: 20px;
+  width: 300px;
+  margin-left: 100px;
+  font-family: "Barlow Condensed", system-ui;
+  font-family: "Gaegu", sans-serif;
+  font-family: "Syne", sans-serif;
+  font-family: "Gotu", sans-serif;
+  font-family: safiro-regular;
 }
-
+.down-section{
+  display: flex;
+      
+          align-items: flex-start;
+          align-items: center;
+          margin-top: -30px;
+}
 .description-text {
-  color: #525151;
+  color: #F1F2EB;
   margin-top: -7px;
   display: block;
-  max-width: 400px; /* Limit the width of the description */
- margin-left: 10px;
-font-size: 1.2rem;
-margin-bottom: 100px;
-    font-family: "Barlow Condensed", system-ui;
+  max-width: 490px; /* Limit the width of the description */
+ 
+  font-size: 1.2rem;
+  margin-bottom: 100px;
+  font-family: "Supreme", sans-serif;
+  font-family: "Gaegu", sans-serif;
+}
+
+.footer-text {
+  position: fixed; /* Sticks it to the viewport */
+  bottom: 20px; /* Adjust spacing from the bottom */
+  right: 100px; /* Adjust spacing from the right */
+  font-family: "Bebas Neue", sans-serif; /* Match your font style */
+  font-size: 17px; /* Adjust font size */
+  color: #D8DAD3; /* Match your color theme */
+  text-align: right;
+  width: 160px;
+  z-index: 10; /* Ensure it's on top of other elements */
+  top: 870px;
 }
 
 
-   /* Red Ball Styling */
-/* .red-ball { */
-  /* width: 30px; */
-  /* height: 30px; */
-  /* background-color: rgb(199, 32, 32); */
-  /* border-radius: 50%; */
-  /* position: absolute; */
-  /* top: -10px; */
-  /* left: -1px; */
- /*  z-index: -1; */ /* Put it behind the text */
- /*  opacity: 0.8; */ /* Slight transparency */
-/* } */
+.f-text{
+   position: fixed; /* Sticks it to the viewport */
+  bottom: 20px; /* Adjust spacing from the bottom */
+  left: 100px; /* Adjust spacing from the right */
+  font-family: "Bebas Neue", sans-serif; /* Match your font style */
+  font-size: 17px; /* Adjust font size */
+  color: #D8DAD3; /* Match your color theme */
+  text-align: right;
+  width: 160px;
+  z-index: 10;
+   top: 870px;
+}
 
-/* Vertical line before the logo */
-/* Container for header and overall styling */
+.cv{
+     width: 130px;
+     height: 40px;
+   margin-left: 150px;
+   font-size: 16px;
+   font-family: safiro-regular;
+   color: #D8DAD3;
+   border: 1.5px solid #A4C2A5;
+   padding: 9px;
+   border-radius: 5px;
+   
+    /* Add transition for background color */
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
 
-/* Vertical line beside logo */
 
+
+.cv:hover {
+  background-color: #98B399; /* Slightly darker on hover */
+}
+
+.cv-text {
+  display: inline-block;
+  transition: transform 0.5s ease; /* Smooth rotation */
+  margin-left: 24px;
+}
+
+.github{
+  text-decoration: none;
+  color:  #A4C2A5;
+}
+.github:hover{
+color:#7db37f ;
+}
 .copyright {
   font-size: 21px;
   color: #363434; /* Subtle gray color */
-  
+
   font-family: "Barlow Condensed", system-ui;
   font-weight: 300;
- 
-  
+  border-left: 3px solid #000b11; /* Vertical border */
+  padding: 8px;
+  margin-top: 200px;
 }
 
-.copyright_name{
-  color: #23395B;
+.copyright_name {
+  color: #23395b;
   font-weight: 600;
 }
 .shape-container {
   clear: both; /* Ensures the image doesn't float awkwardly */
   position: relative;
-  width: 70%; /* Adjust the size of the container */
+  width: 76%; /* Adjust the size of the container */
   float: right; /* Float it to the right */
-    top: -70px;
-    margin-left: 20px;
+  top: -20px;
+  margin-left: 100px;
 }
 
 .shape-container img {
   width: 100%;
   height: auto;
   object-fit: cover;
-
 }
-
-
-
 
 .scroll-down-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -20rem;
+  margin-top: -18rem;
   position: relative;
 }
 
-.circle-text {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%; /* Makes the container circular */
-  display: flex;
+.text {
+  color: #2f4858; /* A dark color for visibility */
+  font-family: "Barlow Condensed", sans-serif;
   justify-content: center;
   align-items: center;
 }
 
-.circle-letter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: 0px 80px; /* Distance from center */
-  font-size: 12px;
-  font-family: 'Barlow Condensed', sans-serif;
+.about-page {
+  position: relative;
+}
+
+.about-page {
+  font-family: Arial, sans-serif;
   color: #333;
 }
 
-.scroll-arrow {
-  font-size: 24px;
-  color: #333;
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.highlight-text {
+  font-size: 8rem;
+  font-weight: bold;
+  color: #2f4858; /* Highlight color */
+  font-family: "Chillax", sans-serif;
+  font-family: "Gotu", sans-serif;
+}
+.creative {
+  font-size: 8rem;
+  margin-left: 250px;
+  font-family: "Chillax", sans-serif;
+  margin-top: -20px;
+  color: #33658a;
+  font-family: "Gotu", sans-serif;
+}
+
+.roles-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+
+.roles-list li {
+  font-weight: bold;
+  color: #ff6347; /* Accent color */
+}
+
+.description {
+  margin-top: 40px;
+}
+
+.description-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.backslash {
+  font-size: 7rem;
+  color: #f6ae2d;
+  margin-left: 200px;
+  font-family: "Chillax", sans-serif;
+  font-family: "Gaegu", sans-serif;
+}
+
+.description p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin-left: 100px;
+  font-family: "Space Grotesk", sans-serif;
+  font-family: "Gaegu", sans-serif;
+}
+
+.engineer {
+  font-size: 8rem;
+  margin-left: -100px;
+  font-family: "Chillax", sans-serif;
+  color: #284b71;
+  font-family: "Gotu", sans-serif;
+}
+
+
+.text-content {
+  overflow: hidden; /* Ensure wave motion stays clean */
+}
+
+.image-content {
+  transform-origin: center center; /* Smooth scaling effect */
+}
+
+.background {
   position: absolute;
-  margin-top: 160px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f3ec78, #af4261);
+  z-index: -1;
 }
