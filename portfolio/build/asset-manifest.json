@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8080b457.css",
+    "main.js": "./static/js/main.e3b47a1d.js",
+    "static/js/453.1407b060.chunk.js": "./static/js/453.1407b060.chunk.js",
+    "static/media/safiro-regular-i.woff2": "./static/media/safiro-regular-i.0a35a23135da8447ecfd.woff2",
+    "static/media/safiro-regular.woff2": "./static/media/safiro-regular.15f206cea3b4f37faa01.woff2",
+    "static/media/key.mp3": "./static/media/key.248ea3a502f8c49978a3.mp3",
+    "static/media/namee.mp3": "./static/media/namee.357b75a25843bc6172a0.mp3",
+    "index.html": "./index.html",
+    "main.8080b457.css.map": "./static/css/main.8080b457.css.map",
+    "main.e3b47a1d.js.map": "./static/js/main.e3b47a1d.js.map",
+    "453.1407b060.chunk.js.map": "./static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8080b457.css",
+    "static/js/main.e3b47a1d.js"
+  ]
+}
